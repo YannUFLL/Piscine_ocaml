@@ -1,0 +1,6 @@
+*.cmi
+*.cmx
+*.mli
+*.o
+*.a
+a.out
