@@ -6,7 +6,7 @@
 (*   By: root <root@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/01/07 15:52:18 by root              #+#    #+#             *)
-(*   Updated: 2025/01/07 16:20:35 by root             ###   ########.fr       *)
+(*   Updated: 2025/01/08 19:05:44 by root             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -20,5 +20,5 @@ let ft_print_rev str =
   print_char '\n'
 
 let () = 
-    ft_print_rev "Hello World";
+    ft_print_rev "Hello World !";
     ft_print_rev ""
