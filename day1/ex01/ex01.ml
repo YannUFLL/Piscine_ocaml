@@ -6,14 +6,24 @@
 (*   By: root <root@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/01/09 14:59:25 by root              #+#    #+#             *)
-(*   Updated: 2025/01/09 16:50:45 by root             ###   ########.fr       *)
+(*   Updated: 2025/01/28 20:13:41 by root             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-module IntHash = struct 
+module StringHash = struct
     type t = string
-    let equal i j = i=j 
+    let equal s1 s2 = s1 = s2
+    let hash s = 
+        let rec hashFunction s i acc = 
+            if (i < String.length s) then
+                hashFunction s (i + 1) (acc + Hashtbl.hash (String.get s i))
+            else
+                acc
+            in 
+            hashFunction s 0 0
+    end
 
+module StringHashtbl = Hashtbl.Make(StringHash)
 
 let () =
 let ht = StringHashtbl.create 5 in
