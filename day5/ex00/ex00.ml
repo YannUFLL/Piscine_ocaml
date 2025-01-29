@@ -1,24 +1,23 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   ft_print_rev.ml                                    :+:      :+:    :+:   *)
+(*   ex00.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/01/07 15:52:18 by ydumaine          #+#    #+#             *)
+(*   Created: 2025/01/09 13:24:53 by ydumaine          #+#    #+#             *)
 (*   Updated: 2025/01/29 18:34:02 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let ft_print_rev str = 
-  let rec create_revers_char_list str x = 
-    if (x >= 0) then
-      String.get str x :: create_revers_char_list str (x - 1)
-    else [] in 
-  let revers_string = create_revers_char_list str (String.length str - 1) in
-  List.iter print_char revers_string;
-  print_char '\n'
+module StringOrder = struct
+  type t = string
+  let compare = String.compare
+end
 
-let () = 
-    ft_print_rev "Hello World !";
-    ft_print_rev ""
+module StringSet = Set.Make(StringOrder)
+
+let () =
+let set = List.fold_right StringSet.add [ "foo"; "bar"; "baz"; "qux" ] StringSet.empty in
+StringSet.iter print_endline set;
+print_endline (StringSet.fold ( ^ ) set "");
