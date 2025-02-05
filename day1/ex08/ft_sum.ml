@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/04 22:07:09 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/05 12:04:35 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/05 12:06:45 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -21,3 +21,7 @@ let ft_sum f lower upper =
 
   let () =
   print_float (ft_sum (fun i -> float_of_int (i * i)) 1 10); print_newline ();
+  print_float (ft_sum (fun i -> float_of_int (i * i)) 1 0); print_newline ();
+  print_float (ft_sum (fun i -> float_of_int (i * i)) 1 2); print_newline ();
+  print_float (ft_sum (fun i -> float_of_int (i * i)) 1 1); print_newline ();
+  print_float (ft_sum (fun i -> float_of_int (i * i)) 0 1); print_newline ();

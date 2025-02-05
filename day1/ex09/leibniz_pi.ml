@@ -6,11 +6,13 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/04 22:30:39 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/04 23:34:39 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/05 12:11:21 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let leibniz_pi delta = 
+  if delta < 0.0 then (-1) 
+  else 
   let ft_power x y =
     if (y = 0) then 1
     else if (x = 0) then 0
