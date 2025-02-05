@@ -1,7 +1,7 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   repeat_x.ml                                        :+:      :+:    :+:   *)
+(*   repeat_str.ml                                      :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
@@ -10,18 +10,19 @@
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let repeat_x n = 
+let repeat_str ?(str="x") n = 
   let rec loop acc x= 
     if (x < 0) then "Error"
     else if (x = 0) then acc
     else
-      loop (acc ^ "x") (x - 1)
+      loop (acc ^ str) (x - 1)
     in 
-    loop "" n
+    loop str n
 
 let () = 
-    print_endline (repeat_x (-1));
-    print_endline (repeat_x 0);
-    print_endline (repeat_x 1);
-    print_endline (repeat_x 2);
-    print_endline (repeat_x 5);
+    print_endline (repeat_str (-1));
+    print_endline (repeat_str (0));
+    print_endline (repeat_str ~str:"Hello" (-1));
+    print_endline (repeat_str ~str:"Hello" (0));
+    print_endline (repeat_str ~str:"Hello" (3));
+    print_endline (repeat_str ~str:"Hello" (10))

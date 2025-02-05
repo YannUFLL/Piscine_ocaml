@@ -1,27 +1,24 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   repeat_x.ml                                        :+:      :+:    :+:   *)
+(*   ackermann.ml                                       :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/01/29 18:26:23 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/01/30 14:43:54 by ydumaine         ###   ########.fr       *)
+(*   Created: 2025/02/03 14:00:19 by ydumaine          #+#    #+#             *)
+(*   Updated: 2025/02/03 17:28:33 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-let repeat_x n = 
-  let rec loop acc x= 
-    if (x < 0) then "Error"
-    else if (x = 0) then acc
-    else
-      loop (acc ^ "x") (x - 1)
-    in 
-    loop "" n
+
+let rec ackermann m n  =
+  if (m < 0 || n < 0) then -1 
+  else if (m = 0) then n + 1
+  else if (m > 0 && n = 0) then ackermann (m - 1) 1
+  else  ackermann (m - 1) (ackermann m (n - 1))
 
 let () = 
-    print_endline (repeat_x (-1));
-    print_endline (repeat_x 0);
-    print_endline (repeat_x 1);
-    print_endline (repeat_x 2);
-    print_endline (repeat_x 5);
+  print_int (ackermann (-1) 0);
+  print_int (ackermann 0 0);
+  print_int (ackermann 2 3);
+  print_int (ackermann 4 1);
