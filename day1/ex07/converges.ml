@@ -6,12 +6,12 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/04 21:34:34 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/04 22:04:36 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/05 11:28:16 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let rec converges f x n =
-  if n <= 0 then false
+  if n < 0 then false
   else if (x = f x) then true
   else converges f (f x) (n - 1)
 
