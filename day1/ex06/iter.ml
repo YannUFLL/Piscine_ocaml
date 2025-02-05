@@ -1,24 +1,22 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   ackermann.ml                                       :+:      :+:    :+:   *)
+(*   iter.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/02/03 14:00:19 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/03 21:26:03 by ydumaine         ###   ########.fr       *)
+(*   Created: 2025/02/04 18:18:35 by ydumaine          #+#    #+#             *)
+(*   Updated: 2025/02/04 21:20:21 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-
-let rec ackermann m n  =
-  if (m < 0 || n < 0) then -1 
-  else if (m = 0) then n + 1
-  else if (m > 0 && n = 0) then ackermann (m - 1) 1
-  else  ackermann (m - 1) (ackermann m (n - 1))
+let rec iter f x n =
+  if n < 0 then -1
+  else if n = 0 then x
+  else f (iter f x (n - 1))
 
 let () = 
-print_int (ackermann (-1) 0); print_newline ();
-print_int (ackermann 0 0); print_newline ();
-print_int (ackermann 2 3); print_newline ();
-print_int (ackermann 4 1); print_newline ();
+  iter (fun x -> x * x) 2 4 
+  |> Format.printf "%d\n";
+  iter (fun x -> x * x) 1 5 
+  |> Format.printf "%d\n"

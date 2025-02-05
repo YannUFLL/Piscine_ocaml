@@ -1,24 +1,27 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   ackermann.ml                                       :+:      :+:    :+:   *)
+(*   hofstadter_mf.ml                                   :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/02/03 14:00:19 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/03 21:26:03 by ydumaine         ###   ########.fr       *)
+(*   Created: 2025/02/04 14:24:28 by ydumaine          #+#    #+#             *)
+(*   Updated: 2025/02/04 18:17:25 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
+let rec hfs_f n=
+  if n = 0 then 1
+  else if n > 0 then n - hfs_m(hfs_f (n - 1))
+  else -1
+and  hfs_m n =
+  if n = 0 then 0
+  else if n > 0 then n - hfs_f(hfs_m (n - 1))
+  else -1
 
-let rec ackermann m n  =
-  if (m < 0 || n < 0) then -1 
-  else if (m = 0) then n + 1
-  else if (m > 0 && n = 0) then ackermann (m - 1) 1
-  else  ackermann (m - 1) (ackermann m (n - 1))
 
-let () = 
-print_int (ackermann (-1) 0); print_newline ();
-print_int (ackermann 0 0); print_newline ();
-print_int (ackermann 2 3); print_newline ();
-print_int (ackermann 4 1); print_newline ();
+  let () =
+  print_int (hfs_f 0); print_newline ();
+  print_int (hfs_m 0); print_newline ();
+  print_int (hfs_f 4); print_newline ();
+  print_int (hfs_m 4); print_newline ();
