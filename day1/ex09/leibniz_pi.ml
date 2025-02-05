@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/04 22:30:39 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/05 12:11:21 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/05 12:31:54 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -33,3 +33,6 @@ let leibniz_pi delta =
   let () = 
     print_int (leibniz_pi 0.1); print_newline ();
     print_int (leibniz_pi 0.0001); print_newline ();
+    print_int (leibniz_pi 0.01); print_newline ();
+    print_int (leibniz_pi 1.0); print_newline ();
+    print_int (leibniz_pi (-1.0)); print_newline ();
