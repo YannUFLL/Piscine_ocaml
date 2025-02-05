@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/04 18:18:35 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/04 21:20:21 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/05 11:17:05 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -19,4 +19,8 @@ let () =
   iter (fun x -> x * x) 2 4 
   |> Format.printf "%d\n";
   iter (fun x -> x * x) 1 5 
+  |> Format.printf "%d\n";
+  iter (fun x -> x * 2) 2 4 
+  |> Format.printf "%d\n";
+  iter (fun x -> x * 2) 2 (-5) 
   |> Format.printf "%d\n"
