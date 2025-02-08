@@ -3,10 +3,10 @@
 (*                                                        :::      ::::::::   *)
 (*   crossover.ml                                       :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
-(*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
+(*   By: root <root@student.42.fr>                  +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/07 15:56:58 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/07 17:46:43 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/08 17:20:02 by root             ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -28,7 +28,7 @@ in
     let result = crossover l1 l2 in 
     if (result = expected ) then
     Printf.printf "Test passed for (%s) (%s)\n" 
-      (String.concat ";" (List.map string_of_int l1))  
+      (String.concat ";" (  List.map string_of_int l1))  
       (String.concat ";" (List.map string_of_int l2))
     else 
     Printf.printf "Test failed for (%s) (%s), got (%s)\n" 
@@ -36,7 +36,6 @@ in
       (String.concat ";" (List.map string_of_int l2))
       (String.concat ";" (List.map string_of_int result))
     in 
-
 
   test_crossover [1; 2; 3] [3; 4; 5] [3];
   test_crossover [1; 2; 3; 4] [2; 4; 6; 8] [4; 2];
