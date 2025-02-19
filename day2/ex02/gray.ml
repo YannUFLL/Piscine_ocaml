@@ -3,10 +3,10 @@
 (*                                                        :::      ::::::::   *)
 (*   gray.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
-(*   By: root <root@student.42.fr>                  +#+  +:+       +#+        *)
+(*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/08 10:43:14 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/08 17:09:30 by root             ###   ########.fr       *)
+(*   Updated: 2025/02/19 12:36:50 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -17,9 +17,9 @@ let rec print_bits n zero =
   let rec aux x i = 
     if i = zero then ()
     else begin 
-    aux (x lsr 1) (i + 1);
-    if ((x land 1) = 1) then print_char '1' 
-    else  print_char '0';  end in 
+      aux (x lsr 1) (i + 1);
+      if ((x land 1) = 1) then print_char '1' 
+      else  print_char '0'; end in 
   aux n 0
 
 let gray n = 
