@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/17 16:05:40 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/19 15:19:52 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/20 19:22:29 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -33,8 +33,9 @@ let rec string_of_int_list list =
     | head :: tail ->  create_string_number head ^ (loop tail) in
   loop list
 
+  
 let sequence n = 
-  if n < 0 then ""
+  if n <= 0 then ""
   else if n = 1 then "1"
   else
     
@@ -61,4 +62,5 @@ let () =
     print_endline (sequence (2));
     print_endline (sequence (3));
     print_endline (sequence (20));
+    print_endline (sequence (40));
 
