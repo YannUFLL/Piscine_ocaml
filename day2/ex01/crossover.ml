@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/07 15:56:58 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/19 11:48:58 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/19 15:30:03 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -43,6 +43,8 @@ in
   test_crossover [1; 1; 2; 2] [1; 2; 3; 4] [2; 1];
   test_crossover [] [1; 2; 3] [];
   test_crossover [] [] [];
+  test_crossover [(-1); (-1)] [(-1);(-4);(-1)] [(-1)];
+  test_crossover [0; (-1)] [(0);(-4);(-1)] [(-1);0];
   test_crossover [1; 2; 3] [] [];
   test_crossover [1; 2; 3] [1; 2; 3] [3; 2; 1];
   test_crossover [1; 2; 3; 4; 5] [5; 4; 3; 2; 1] [5; 4; 3; 2; 1];

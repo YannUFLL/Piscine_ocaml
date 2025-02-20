@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/17 16:05:40 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/19 12:36:19 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/19 15:19:52 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -55,5 +55,10 @@ let sequence n =
     
 
 let () = 
-    print_endline (sequence 20)
+    print_endline (sequence (-1));
+    print_endline (sequence (0));
+    print_endline (sequence (1));
+    print_endline (sequence (2));
+    print_endline (sequence (3));
+    print_endline (sequence (20));
 
