@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/19 16:50:14 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/20 16:41:16 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/21 12:08:46 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -175,7 +175,7 @@ let rec string_of_protein protein : string =
   | aminoacid :: rest -> aux ((string_of_aminoacid aminoacid) :: acc) rest in
     create_string "" (aux [] protein)
 
-let decode_arn arn =
+let decode_arn arn : protein =
   let triplets = generate_base_triplets (arn) in
   let rec aux acc triplets = match triplets with
   | ((U,A,A) | (U,A,G) | (U,G,A)) :: rest -> acc
@@ -270,8 +270,16 @@ let () =
 
   (* Special test: Check a STOP codon *)
   print_newline ();
-  print_string "===== Test with an RNA containing a STOP codon =====\n";
+  print_string "===== Test with an RNA containing a STOP codon at the start =====\n";
   let rna_stop = [U;A;G;C;A;U;A;A;C;G;A;C] in
+  print_string (rna_to_string rna_stop); print_newline ();
+  let stop_protein = decode_arn rna_stop in
+  print_string (string_of_protein stop_protein); print_newline ();
+
+  (* Special test: Check a STOP codon inside rna *)
+  print_newline ();
+  print_string "===== Test with an RNA containing a STOP codon at the middle of it =====\n";
+  let rna_stop = [C;C;A;A;A;G;G;A;C;U;A;G;C;A;U;A;A;C;G;A;C] in
   print_string (rna_to_string rna_stop); print_newline ();
   let stop_protein = decode_arn rna_stop in
   print_string (string_of_protein stop_protein); print_newline ();

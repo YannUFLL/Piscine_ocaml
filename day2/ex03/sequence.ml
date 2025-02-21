@@ -6,9 +6,15 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/17 16:05:40 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/20 19:22:29 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/20 19:37:19 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
+
+let reverse_list list = 
+  let rec aux acc list = match list with
+  | [] -> acc
+  | head :: tail -> aux (head :: acc) tail in
+  aux [] list
 
 let rec string_of_int_list list = 
   let rec create_string_number x = 
@@ -61,6 +67,7 @@ let () =
     print_endline (sequence (1));
     print_endline (sequence (2));
     print_endline (sequence (3));
+    print_endline (sequence (7));
     print_endline (sequence (20));
     print_endline (sequence (40));
 

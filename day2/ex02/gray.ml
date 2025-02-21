@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/08 10:43:14 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/19 15:24:49 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/20 16:51:58 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -36,11 +36,19 @@ let gray n =
 
 let () = 
   gray (-1);
+  print_newline ();
   gray (0);
+  print_newline ();
   gray 1;
+  print_newline ();
   gray 2;
+  print_newline ();
   gray 2;
+  print_newline ();
   gray 3;
+  print_newline ();
   gray 4;
+  print_newline ();
   gray 5;
+  print_newline ();
   gray 6;

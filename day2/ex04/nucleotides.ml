@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/18 17:34:07 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/20 16:44:50 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/02/21 12:04:08 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -59,6 +59,6 @@ let () =
   Printf.printf "\n";
 
   (* Pour un caractère invalide, la fonction renvoie ("phosphate", "deoxyribose", None) *)
-  Printf.printf "Test generate_nucleotide 'X': ";
-  print_nucleotide (generate_nucleotide 'X');
+  Printf.printf "Test generate_nucleotide 'Q': ";
+  print_nucleotide (generate_nucleotide 'Q');
   Printf.printf "\n"
