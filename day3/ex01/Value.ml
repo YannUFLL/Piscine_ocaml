@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/03 18:49:38 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/03/04 11:55:21 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/03/05 14:32:52 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -84,7 +84,7 @@ let next v = match v with
   | T8 -> T7
   | T9 -> T8
   | T10 -> T9
-  | Jack -> Queen
-  | Queen -> King
-  | King -> As
-  | As -> invalid_arg "next: As has no next value"
+  | Jack -> T10
+  | Queen -> Jack
+  | King -> Queen
+  | As -> King
