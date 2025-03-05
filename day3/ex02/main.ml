@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/04 15:11:40 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/03/04 18:51:57 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/03/05 14:40:07 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -65,7 +65,6 @@ let () =
   print_string ("isOf Queen Heart: " ^ string_of_bool (Card.isOf card Card.Color.Heart));
   print_newline ();
   print_string ("isOf Queen Spade: " ^ string_of_bool (Card.isOf card Card.Color.Spade));
-  print_newline ();
   print_newline ();
 
   print_string "Testing isSpade, isHeart, isDiamond, isClub with KS:"; print_newline ();
