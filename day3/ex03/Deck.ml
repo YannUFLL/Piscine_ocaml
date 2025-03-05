@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/04 15:53:51 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/03/04 19:31:06 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/03/05 14:28:27 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -169,8 +169,24 @@ end
 type t = Card.t list  
 
 let newDeck () = 
+  let rec extract_at idx lst acc =
+    match lst with
+    | [] -> failwith "Index out of bounds"
+    | x :: xs ->
+        if idx = 0 then (x, List.rev_append acc xs) 
+        else extract_at (idx - 1) xs (x :: acc) in
+  
+  let rec shuffle lst acc =
+    match lst with
+    | [] -> acc 
+    | _ ->
+        let len = List.length lst in
+        let idx = Random.int len in
+        let picked, rest = extract_at idx lst [] in
+        shuffle rest (picked :: acc) in 
+  
   let deck = Card.allSpades @ Card.allClubs @ Card.allDiamonds @ Card.allHearts in
-  List.sort (fun _  _-> (Random.int 3) - 1) deck
+  shuffle deck []
   
 let toStringList deck = 
     List.map Card.toString deck
