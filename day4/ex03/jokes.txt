@@ -1,4 +1,24 @@
 Il y a 10 types de gens dans le monde. Ceux qui parlent binaire, et les autres.
+
 Comment un développeur tente-t-il de réparer sa voiture lorsqu'elle a un problème ? Il sort de la voiture, ferme toutes les fenêtres, retourne dans la voiture, et essaie de redémarrer.
-Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\nVous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?\n
+
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+Vous connaissez la blague du mec qui a oublié d'augmenter la variable dans sa boucle while ?
+
 Un homme entre dans un café… Et plouf !
+
+Une requête TCP entre dans un bar et dit :
+- Je veux une bière
+- Vous voulez une bière ?
+- Oui, je veux une bière
+- Très bien
+
+Le bus « tombe en panne » sans raison apparente, et voila les 3 gars à discuter.
+L’électronicien : je pourrais regarder les circuits et voir si quelque chose cloche.
+Le chimiste : on devrait vérifier l'essence avant.
+L’ingé Microsoft : non, on remonte dans le bus, on ferme toutes les fenêtres, et logiquement ça devrait redémarrer.
