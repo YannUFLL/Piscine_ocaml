@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/01/29 11:11:08 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/01/29 18:34:02 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/01 14:25:37 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -17,16 +17,10 @@ end
 module type FIXED = sig
   type t
   val of_float : float -> t
-  val of_int
-  : int
-  -> t
-  val to_float : t
-  -> float
-  val to_int
-  : t
-  -> int
-  val to_string : t
-  -> string
+  val of_int: int -> t
+  val to_float : t -> float
+  val to_int : t -> int
+  val to_string : t -> string
   val zero : t
   val one : t
   val succ : t -> t
@@ -92,9 +86,45 @@ module type FIXED = sig
 
   module Fixed4 : FIXED = Make (struct let bits = 4 end)
 module Fixed8 : FIXED = Make (struct let bits = 8 end)
+
 let () =
-let x8 = Fixed8.of_float 21.10 in
-let y8 = Fixed8.of_float 21.32 in
-let r8 = Fixed8.add x8 y8 in
-print_endline (Fixed8.to_string r8);
-Fixed4.foreach (Fixed4.zero) (Fixed4.one) (fun f -> print_endline (Fixed4.to_string f))
+  let module F = Fixed8 in
+  let open F in
+
+  let print name x = Printf.printf "%s: %s\n" name (to_string x) in
+  let print_bool name b = Printf.printf "%s: %b\n" name b in
+
+  let a = of_float 2.5 in
+  let b = of_int 3 in
+
+  print "a" a;
+  print "b" b;
+  print "of_int 3" (of_int 3);
+  print "of_float 2.5" (of_float 2.5);
+  print "to_int a" (of_int (to_int a)); (* round trip *)
+  print "to_float a" (of_float (to_float a)); (* round trip *)
+
+  print "zero" zero;
+  print "one" one;
+  print "succ a" (succ a);
+  print "pred b" (pred b);
+
+  print "min a b" (min a b);
+  print "max a b" (max a b);
+
+  print_bool "gth a b" (gth a b);
+  print_bool "lth a b" (lth a b);
+  print_bool "gte a b" (gte a b);
+  print_bool "lte a b" (lte a b);
+
+  print_bool "eqp a a" (eqp a a);
+  print_bool "eqp a b" (eqp a b);
+  print_bool "eqs a (of_float 2.5)" (eqs a (of_float 2.5));
+
+  print "add a b" (add a b);
+  print "sub b a" (sub b a);
+  print "mul a b" (mul a b);
+  print "div b a" (div b a);
+
+  Printf.printf "\nforeach from 0 to 1:\n";
+  foreach zero one (fun f -> print_endline (to_string f));

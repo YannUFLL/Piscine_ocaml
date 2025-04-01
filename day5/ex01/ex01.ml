@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/01/09 14:59:25 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/01/29 18:34:02 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/01 14:45:02 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -16,7 +16,7 @@ module StringHash = struct
     let hash s = 
         let rec hashFunction s i acc = 
             if (i < String.length s) then
-                hashFunction s (i + 1) (acc + Hashtbl.hash (String.get s i))
+                hashFunction s (i + 1) (acc + (Hashtbl.hash (String.get s i)))
             else
                 acc
             in 
