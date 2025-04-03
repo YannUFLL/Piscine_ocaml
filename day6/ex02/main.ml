@@ -1,22 +1,22 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   people.ml                                          :+:      :+:    :+:   *)
+(*   main.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/04/03 13:01:30 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/03 17:18:43 by ydumaine         ###   ########.fr       *)
+(*   Created: 2025/04/03 18:01:24 by ydumaine          #+#    #+#             *)
+(*   Updated: 2025/04/03 18:31:43 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class people name = 
-  object
-    val _hp = 100
-    val _name = name
-    method to_string = "name: " ^ _name ^ " age: " ^ (string_of_int _hp)
-    method talk = print_endline ("I'm " ^ _name ^ "! Do you know the Doctor?")
-    method die = print_endline ("Aaaarghh!")
-    initializer print_endline ("A people named " ^ _name ^  " appear in the world")
-  end
-   
+let () = 
+  let dr = new Doctor.doctor "Octopus" 80 (new People.people "Victoume") in 
+  let dalek = new Dalek.dalek in
+  let bob = new People.people "Bob" in
+  dalek#exterminate(dr#get_sidekick);
+  print_endline dalek#talk;
+  
+  
+
+  

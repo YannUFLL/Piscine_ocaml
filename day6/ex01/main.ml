@@ -1,22 +1,23 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                        :::      ::::::::   *)
-(*   people.ml                                          :+:      :+:    :+:   *)
+(*   main.ml                                            :+:      :+:    :+:   *)
 (*                                                    +:+ +:+         +:+     *)
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
-(*   Created: 2025/04/03 13:01:30 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/03 17:18:43 by ydumaine         ###   ########.fr       *)
+(*   Created: 2025/04/03 15:30:05 by ydumaine          #+#    #+#             *)
+(*   Updated: 2025/04/03 17:30:54 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class people name = 
-  object
-    val _hp = 100
-    val _name = name
-    method to_string = "name: " ^ _name ^ " age: " ^ (string_of_int _hp)
-    method talk = print_endline ("I'm " ^ _name ^ "! Do you know the Doctor?")
-    method die = print_endline ("Aaaarghh!")
-    initializer print_endline ("A people named " ^ _name ^  " appear in the world")
-  end
-   
+let () = 
+ let dr = new Doctor.doctor "Giga Chad" (-10) (new People.people "Yann") in
+ dr#talk; print_newline (); 
+ print_endline dr#to_string;
+ dr#travel_in_time 2025 2050;
+ print_endline dr#to_string;
+ dr#travel_in_time 2050 1980;
+ print_endline dr#to_string;
+ dr#use_sonic_screwdriver;
+ 
+ 
