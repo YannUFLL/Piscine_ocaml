@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/31 15:16:05 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/01 11:52:50 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/03 11:07:38 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -65,9 +65,9 @@ struct
 end
 
 
-module IntEvalExpr : (EVALEXPR with type t := int) = MakeEvalExpr (IntVal)
-module FloatEvalExpr : (EVALEXPR with type t := float) = MakeEvalExpr (FloatVal)
-module StringEvalExpr : (EVALEXPR with type t := string) = MakeEvalExpr (StringVal)
+module IntEvalExpr : (EVALEXPR with type t := IntVal.t) = MakeEvalExpr (IntVal)
+module FloatEvalExpr : (EVALEXPR with type t := FloatVal.t) = MakeEvalExpr (FloatVal)
+module StringEvalExpr : (EVALEXPR with type t := StringVal.t) = MakeEvalExpr (StringVal)
 let ie = IntEvalExpr.Add (IntEvalExpr.Value 40, IntEvalExpr.Value 2)
 let fe = FloatEvalExpr.Add (FloatEvalExpr.Value 41.5, FloatEvalExpr.Value 0.92)
 let se = StringEvalExpr.Mul (StringEvalExpr.Value "very ",
