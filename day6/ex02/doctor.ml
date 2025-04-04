@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/03 14:56:32 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/04 12:46:22 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/04 15:50:58 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -23,7 +23,7 @@ class doctor name age sidekick =
     method take_damage dmg = 
       print_endline (_name ^ " take " ^ string_of_int dmg ^ " dmg.");
       _hp <- (max 0 (_hp - dmg)); 
-      if _hp = 0 then print_endline ("Aarghh *The doctor died*") else ()
+      if _hp = 0 then print_endline ("Aarghh *The doctor " ^ _name ^ " died*") else ()
     method travel_in_time start arrival = _age <- (let new_age = (arrival - start) + _age in 
     if new_age > 0 then  new_age else 0); print_endline
 "            ___         

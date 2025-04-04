@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/04 14:22:21 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/04 15:12:26 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/04 15:43:08 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -62,7 +62,7 @@ class galifrey =
       List.iter
         (fun doctor ->
             match _daleks with
-            | d :: ds -> doctor#attack d (Random.int 40); if d#is_still_alive then () else _daleks <- ds
+            | d :: ds -> doctor#attack d (Random.int 30); if d#is_still_alive then () else _daleks <- ds
             | [] -> ())
         _doctors
 
