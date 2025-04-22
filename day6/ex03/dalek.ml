@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/03 17:41:37 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/04 15:24:52 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/22 11:12:41 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -25,7 +25,7 @@ class dalek =
     if (x = 1) then "Exterminate! Exterminate!" else
     if (x = 2) then "I obey!" else 
                     "You are the Doctor! You are the enemy of the Daleks!"
-    method exterminate (people: People.people) = people#take_damage 1000; _shield <- false
+    method exterminate (people: People.people) = people#take_damage 1000; _shield <- not _shield
     method die = print_endline "Emergency Temporal Shift!"
     method is_still_alive = if _hp > 0  then true else false 
     method take_damage dmg = 
