@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/23 17:26:55 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/24 12:35:35 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/24 13:21:12 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -28,7 +28,7 @@ class virtual molecule name (atoms: Atom.atom list) =
       generate_string mol
     method name = _name
     method formula = _formula
-    method to_string = "" ^ _name ^ " : " ^ _formula
+    method to_string = "" ^ _name ^ ": " ^ _formula
     method compare (other : molecule) = 
       other#formula = self#formula &&
       other#name = self#name
