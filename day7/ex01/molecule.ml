@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/23 17:26:55 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/24 13:21:12 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/24 18:10:51 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -103,4 +103,9 @@ object
     List.init 3 (fun _ -> new Atom.nitrogen) @
     List.init 6 (fun _ -> new Atom.oxygen)
   )
+end
+
+class dioxygen =
+object
+  inherit molecule "Dioxygen" [new Atom.oxygen; new Atom.oxygen]
 end

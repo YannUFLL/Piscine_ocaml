@@ -6,13 +6,15 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 13:06:13 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/24 13:21:03 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/04/24 18:29:41 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 
 class virtual alkane n = 
   object (self)
+  
+    val _n = n
     val _name : string = match n with
     | 1 -> "Methane"
     | 2 -> "Ethane"
@@ -36,6 +38,9 @@ class virtual alkane n =
     method compare (other : alkane) = 
       other#formula = self#formula &&
       other#name = self#name
+    method carbon_count = _n
+    method hydrogen_count = 2 * _n + 2
+      
   end
 
 class methane =
