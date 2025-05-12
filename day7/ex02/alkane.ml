@@ -6,16 +6,16 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 13:06:13 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/24 18:29:41 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/12 13:27:04 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 
-class virtual alkane n = 
-  object (self)
-  
-    val _n = n
-    val _name : string = match n with
+class virtual alkane (n : int) =
+  let carbon_atoms = List.init n (fun _ -> new Atom.carbon) in
+  let hydrogen_atoms = List.init (2 * n + 2) (fun _ -> new Atom.hydrogen) in
+  let all_atoms = carbon_atoms @ hydrogen_atoms in
+  let name = match n with
     | 1 -> "Methane"
     | 2 -> "Ethane"
     | 3 -> "Propane"
@@ -29,18 +29,11 @@ class virtual alkane n =
     | 11 -> "Undecane"
     | 12 -> "Dodecane"
     | _ -> "Unknown alkane"
-    
-    val _formula : string =  "C" ^ (if n > 1 then string_of_int n else "") ^ "H" ^ string_of_int (2 * n + 2)
- 
-    method name = _name
-    method formula = _formula
-    method to_string = "" ^ self#name ^ ": " ^ self#formula
-    method compare (other : alkane) = 
-      other#formula = self#formula &&
-      other#name = self#name
-    method carbon_count = _n
-    method hydrogen_count = 2 * _n + 2
-      
+  in
+  object (self)
+    inherit Molecule.molecule name all_atoms
+    method carbon_count = n
+    method hydrogen_count = 2 * n + 2
   end
 
 class methane =

@@ -6,13 +6,13 @@
 #    By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/03 11:19:13 by ydumaine          #+#    #+#              #
-#    Updated: 2025/04/24 13:15:43 by ydumaine         ###   ########.fr        #
+#    Updated: 2025/05/12 11:41:59 by ydumaine         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = a.out
 # Order is important for the linking
-SOURCES = alkane.ml main.ml
+SOURCES = atom.ml molecule.ml alkane.ml main.ml
 
 CAMLC = ocamlc
 CAMLOPT = ocamlopt
