@@ -6,15 +6,29 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/03 18:49:38 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/03/05 14:32:52 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:41:03 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-type t = T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | T10 | Jack | Queen | King | As
+type t =
+  | T2
+  | T3
+  | T4
+  | T5
+  | T6
+  | T7
+  | T8
+  | T9
+  | T10
+  | Jack
+  | Queen
+  | King
+  | As
 
-let all = [T2; T3; T4; T5; T6; T7; T8; T9; T10; Jack; Queen; King; As]
+let all = [ T2; T3; T4; T5; T6; T7; T8; T9; T10; Jack; Queen; King; As ]
 
-let toInt v = match v with
+let toInt v =
+  match v with
   | T2 -> 1
   | T3 -> 2
   | T4 -> 3
@@ -29,7 +43,8 @@ let toInt v = match v with
   | King -> 12
   | As -> 13
 
-let toString v = match v with
+let toString v =
+  match v with
   | T2 -> "2"
   | T3 -> "3"
   | T4 -> "4"
@@ -44,7 +59,8 @@ let toString v = match v with
   | King -> "K"
   | As -> "A"
 
-let toStringVerbose v = match v with
+let toStringVerbose v =
+  match v with
   | T2 -> "2"
   | T3 -> "3"
   | T4 -> "4"
@@ -58,8 +74,9 @@ let toStringVerbose v = match v with
   | Queen -> "Queen"
   | King -> "King"
   | As -> "As"
-  
-let next v = match v with
+
+let next v =
+  match v with
   | T2 -> T3
   | T3 -> T4
   | T4 -> T5
@@ -74,8 +91,9 @@ let next v = match v with
   | King -> As
   | As -> invalid_arg "next: As has no next value"
 
-  let previous v = match v with
-  | T2 ->  invalid_arg "previous: Previous has no next value"
+let previous v =
+  match v with
+  | T2 -> invalid_arg "previous: Previous has no next value"
   | T3 -> T2
   | T4 -> T3
   | T5 -> T4

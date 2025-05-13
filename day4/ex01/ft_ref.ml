@@ -6,23 +6,20 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/03/06 16:24:49 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/03/13 15:39:43 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:39:57 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-type 'a ft_ref = {mutable contents : 'a}
+type 'a ft_ref = { mutable contents : 'a }
 
 let return x = { contents = x }
-
 let get x = x.contents
-
 let set x y = x.contents <- y
-
 let bind (x : 'a ft_ref) (f : 'a -> 'a ft_ref) : 'a ft_ref = f x.contents
 
 let print_result expected result =
-  Printf.printf "Result: %s | Expected: %s %s\n"
-    result expected (if result = expected then "✅" else "❌")
+  Printf.printf "Result: %s | Expected: %s %s\n" result expected
+    (if result = expected then "✅" else "❌")
 
 let () =
   let r = return 42 in
@@ -52,4 +49,4 @@ let () =
   print_result "3.14" (string_of_float (get float_ref));
 
   set float_ref 2.718;
-  print_result "2.718" (string_of_float (get float_ref));
+  print_result "2.718" (string_of_float (get float_ref))

@@ -6,17 +6,16 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/12 15:43:39 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/12 16:05:15 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:26:48 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let print_chem_list lst =
   let rec aux = function
     | [] -> ()
-    | [(mol, coef)] ->
-        Printf.printf "%d %s" coef (mol#to_string)
-    | (mol, coef)::t ->
-        Printf.printf "%d %s + " coef (mol#to_string);
+    | [ (mol, coef) ] -> Printf.printf "%d %s" coef mol#to_string
+    | (mol, coef) :: t ->
+        Printf.printf "%d %s + " coef mol#to_string;
         aux t
   in
   aux lst;
@@ -24,9 +23,9 @@ let print_chem_list lst =
 
 let print_reaction reaction =
   Printf.printf "Reactants: ";
-  print_chem_list (reaction#get_start);
+  print_chem_list reaction#get_start;
   Printf.printf "Products:  ";
-  print_chem_list (reaction#get_result);
+  print_chem_list reaction#get_result;
   Printf.printf "\n"
 
 let test_combustion alks name =
@@ -36,17 +35,17 @@ let test_combustion alks name =
   let balanced = rx#balance in
   Printf.printf "After  balance: is_balanced = %b\n" balanced#is_balanced;
   print_reaction balanced;
-  Printf.printf "----------------------------------\n" 
+  Printf.printf "----------------------------------\n"
 
 let () =
   let methane = new Alkane.methane in
-  let ethane  = new Alkane.ethane in
+  let ethane = new Alkane.ethane in
 
-  test_combustion [methane] "Combustion du méthane" ;
-  test_combustion [ethane] "Combustion de l'éthane" ;
-  test_combustion [methane; ethane; ethane] "Mélange : CH4 + 2 C2H6" ;
+  test_combustion [ methane ] "Combustion du méthane";
+  test_combustion [ ethane ] "Combustion de l'éthane";
+  test_combustion [ methane; ethane; ethane ] "Mélange : CH4 + 2 C2H6";
 
-  let already = new Alkane_combustion.alkane_combustion [methane]  in
+  let already = new Alkane_combustion.alkane_combustion [ methane ] in
   let fixed = already#balance in
   Printf.printf "=== Vérif. idempotence sur méthane ===\n";
-  print_reaction fixed;
+  print_reaction fixed

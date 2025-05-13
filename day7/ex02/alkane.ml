@@ -6,16 +6,16 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 13:06:13 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/12 13:27:04 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:27:11 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-
 class virtual alkane (n : int) =
   let carbon_atoms = List.init n (fun _ -> new Atom.carbon) in
-  let hydrogen_atoms = List.init (2 * n + 2) (fun _ -> new Atom.hydrogen) in
+  let hydrogen_atoms = List.init ((2 * n) + 2) (fun _ -> new Atom.hydrogen) in
   let all_atoms = carbon_atoms @ hydrogen_atoms in
-  let name = match n with
+  let name =
+    match n with
     | 1 -> "Methane"
     | 2 -> "Ethane"
     | 3 -> "Propane"
@@ -33,20 +33,20 @@ class virtual alkane (n : int) =
   object (self)
     inherit Molecule.molecule name all_atoms
     method carbon_count = n
-    method hydrogen_count = 2 * n + 2
+    method hydrogen_count = (2 * n) + 2
   end
 
 class methane =
-object 
-  inherit alkane 1
-end
+  object
+    inherit alkane 1
+  end
 
-class ethane = 
-object 
-  inherit alkane 2
-end 
+class ethane =
+  object
+    inherit alkane 2
+  end
 
-class octane = 
-object 
-  inherit alkane 8 
-end
+class octane =
+  object
+    inherit alkane 8
+  end

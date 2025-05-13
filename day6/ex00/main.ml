@@ -6,10 +6,12 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/03 13:13:39 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/04/22 11:07:52 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:37:39 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let () =
-  let p = new People.people("Yann") in 
-  print_endline p#to_string; p#talk; p#die; 
+  let p = new People.people "Yann" in
+  print_endline p#to_string;
+  p#talk;
+  p#die

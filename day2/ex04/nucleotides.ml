@@ -6,40 +6,34 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/02/18 17:34:07 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/02/21 12:04:08 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 18:42:15 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 type phosphate = string
-
 type deoxyribose = string
-
 type nucleobase = A | T | C | G | None
-
 type nucleotide = phosphate * deoxyribose * nucleobase
 
-let generate_nucleotide nucleobase : nucleotide = 
-  let base = match nucleobase with
-  | 'A' ->  A
-  | 'T' ->  T
-  | 'C' ->  C
-  | 'G' ->  G
-  | _ -> None 
+let generate_nucleotide nucleobase : nucleotide =
+  let base =
+    match nucleobase with
+    | 'A' -> A
+    | 'T' -> T
+    | 'C' -> C
+    | 'G' -> G
+    | _ -> None
   in
 
-  match base with 
+  match base with
   | None -> ("phosphate", "deoxyribose", None)
   | b -> ("phosphate", "deoxyribose", b)
 
-let print_nucleotide (p, d, nb) = 
-  let nb_str = match nb with 
-  | A -> "A"
-  | T -> "T"
-  | C -> "C"
-  | G -> "G"
-  | None -> "X"
-in 
-Printf.printf "(%s, %s, %s)" p d nb_str
+let print_nucleotide (p, d, nb) =
+  let nb_str =
+    match nb with A -> "A" | T -> "T" | C -> "C" | G -> "G" | None -> "X"
+  in
+  Printf.printf "(%s, %s, %s)" p d nb_str
 
 let () =
   Printf.printf "Test generate_nucleotide 'A': ";
