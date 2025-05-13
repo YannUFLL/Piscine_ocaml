@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/23 17:26:55 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/12 11:57:20 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/05/13 13:04:21 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -40,9 +40,19 @@ class water =
     inherit molecule "Water" [new Atom.hydrogen;new Atom.hydrogen;new Atom.oxygen]
   end
 
+class carbon = 
+object
+  inherit molecule "Carbon" [new Atom.carbon]
+end
+
 class carbon_dioxide = 
   object 
     inherit molecule "Carbon Dioxide" [new Atom.carbon; new Atom.oxygen; new Atom.oxygen]
+  end
+
+class carbon_monoxide = 
+  object 
+    inherit molecule "Carbon Monoxide" [new Atom.carbon; new Atom.oxygen]
   end
 
 class methane = 
