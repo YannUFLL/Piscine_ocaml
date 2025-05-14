@@ -70,7 +70,7 @@ class alkane_combustion ?(reactants : (Molecule.molecule * int) list = [])
       in
       List.concat
         (List.init
-           (max_o2 - min_o2 + 1)
+           (max_o2 - min_o2)
            (fun i -> generate_all_combinaison (i + min_o2)))
 
     method balance =
