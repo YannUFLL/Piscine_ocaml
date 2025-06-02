@@ -15,7 +15,7 @@ find . \( \
     -name "*.depend" -o \
     -name "*.out.byt" -o \
     -name "*.native" -o \
-    -name "a.out" \
+    -name "a.out"  \
 \) -type f -delete
 
 echo "Clean complete."

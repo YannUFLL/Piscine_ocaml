@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/12 15:43:39 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/13 18:26:33 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/02 14:54:47 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -51,9 +51,11 @@ let test_incomplete_result alks name =
 let () =
   let methane = new Alkane.methane in
   let ethane = new Alkane.ethane in
+  let propane = new Alkane.propane in
 
   test_incomplete_result [ methane ] "Incomplete combustion du méthane";
   test_incomplete_result [ ethane ] "Incomplete combustion de l'éthane";
+  test_incomplete_result [ propane ] "Incomplete combustion du propane";
   test_incomplete_result
     [ methane; ethane; ethane ]
     " Incomplete combustion mélange : CH4 + 2 C2H6"

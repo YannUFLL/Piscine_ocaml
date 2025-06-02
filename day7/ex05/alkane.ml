@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 13:06:13 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/13 18:27:11 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/02 14:54:18 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -45,6 +45,11 @@ class ethane =
   object
     inherit alkane 2
   end
+
+class propane = 
+  object 
+    inherit alkane 3
+  end 
 
 class octane =
   object

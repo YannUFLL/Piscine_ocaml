@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 16:00:09 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 12:13:41 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/02 17:24:30 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -31,10 +31,9 @@ class alkane_combustion ?(reactants : (Molecule.molecule * int) list = [])
       in
 
       let o_needed = (c_total * 2) + (h_total / 2) in
-      let min_o2 =
-        if h_total mod 2 <> 0 then (h_total / 4) + 1 else h_total / 4
+      let min_o = h_total / 2
       in
-      let max_o2 = if o_needed / 2 = 0 then (o_needed / 2) - 1 else o_needed in
+      let max_o = o_needed  in
       let generate_all_combinaison o =
         let o_remaining = o - (h_total / 2) in
 
@@ -64,14 +63,16 @@ class alkane_combustion ?(reactants : (Molecule.molecule * int) list = [])
                    [ ((new Molecule.carbon_monoxide :> Molecule.molecule), co) ]
                  else [])
               @
-              if c <> 0 then [ ((new Molecule.carbon :> Molecule.molecule), c) ]
-              else [] ))
+              (if c <> 0 then [ ((new Molecule.carbon :> Molecule.molecule), c) ]
+              else [])  @ 
+              [((new Molecule.water :> Molecule.molecule), h_total / 2) ]))
           filter_triplets
       in
       List.concat
         (List.init
-           (max_o2 - min_o2)
-           (fun i -> generate_all_combinaison (i + min_o2)))
+           (max_o - min_o)
+           (fun i -> generate_all_combinaison (i + min_o)))
+
 
     method balance =
       let c_total, h_total =
