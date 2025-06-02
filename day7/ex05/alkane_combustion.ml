@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 16:00:09 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/13 18:26:38 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/02 12:13:41 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -84,7 +84,7 @@ class alkane_combustion ?(reactants : (Molecule.molecule * int) list = [])
 
       let rec add_to_list (a : Alkane.alkane) acc =
         match acc with
-        | (x, q) :: t when x#compare (a :> Molecule.molecule) ->
+        | (x, q) :: t when x#equals (a :> Molecule.molecule) ->
             (x, q + scale) :: t
         | (x, q) :: t -> (x, q) :: add_to_list a t
         | [] -> [ ((a :> Molecule.molecule), scale) ]

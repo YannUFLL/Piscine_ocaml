@@ -12,6 +12,8 @@ find . \( \
     -name "*.annot" -o \
     -name "*.byte" -o \
     -name "*.opt" -o \
+    -name "*.depend" -o \
+    -name "*.out.byt" -o \
     -name "*.native" -o \
     -name "a.out" \
 \) -type f -delete

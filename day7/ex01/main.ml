@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 12:05:27 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/13 18:27:23 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/02 11:44:13 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -22,8 +22,8 @@ let () =
   print_endline "----- SORT TEST -----";
   (new Molecule.trinitrotoluene)#to_string |> print_endline;
   print_endline "----- EQUAL TEST -----";
-  if (new Molecule.water)#compare (new Molecule.water) then print_endline "true"
+  if (new Molecule.water)#equals (new Molecule.water) then print_endline "true"
   else print_endline "false";
-  if (new Molecule.water)#compare (new Molecule.carbon_dioxide) then
+  if (new Molecule.water)#equals (new Molecule.carbon_dioxide) then
     print_endline "true"
   else print_endline "false"
