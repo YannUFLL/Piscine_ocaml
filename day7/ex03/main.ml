@@ -6,13 +6,15 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/04/24 15:34:40 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/05/13 18:27:01 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/03 15:02:21 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 class test_reaction =
   object (self)
     inherit Reaction.reaction [] []
+    method get_result = []
+    method get_start = []
     method balance = (self :> Reaction.reaction)
     method is_balanced = true
   end
