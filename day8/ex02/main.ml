@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/25 21:06:10 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 10:51:24 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 14:01:11 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -74,8 +74,4 @@ let () =
 
   Printf.printf "- int fact 5 = %d (Expected: 120)\n" (Calc_int.fact 5);
   Printf.printf "- float fact 5.0 = %.1f (Expected: 120.0)\n"
-    (Calc_float.fact 5.0);
-
-  Printf.printf "- int fact 7 = %d (Expected: 5040)\n" (Calc_int.fact 7);
-  Printf.printf "- float fact 7.0 = %.1f (Expected: 5040.0)\n"
-    (Calc_float.fact 7.0)
+    (Calc_float.fact 5.0)

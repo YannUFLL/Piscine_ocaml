@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/25 20:36:16 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 10:51:29 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 13:57:18 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -66,5 +66,5 @@ functor
       match p with 0 -> M.zero2 | 1 -> e | _ -> M.mul (power e (p - 1)) e
 
     let rec fact e =
-      if e = M.zero1 then M.zero2 else M.mul (fact (M.sub e (M.div e e))) e
+      if e <= M.zero1 then M.zero2 else M.mul (fact (M.sub e (M.div e e))) e
   end
