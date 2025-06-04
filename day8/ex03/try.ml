@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/31 13:48:29 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 10:51:34 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 14:45:30 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -31,7 +31,7 @@ module Try = struct
 
   let flatten (a : 'a t t) =
     match a with
-    | Failure a -> Failure a
-    | Success (Failure a) -> Failure a
-    | Success (Success a) -> Success a
+    | Failure e_outer -> Failure e_outer
+    | Success (Failure e_inner) -> Failure e_inner
+    | Success (Success v) -> Success v
 end

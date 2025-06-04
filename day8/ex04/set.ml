@@ -6,12 +6,12 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/31 21:33:50 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 10:51:37 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 14:51:09 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 module Set = struct
-  type 'a t = 'a List.t
+  type 'a t = 'a list
 
   let return x = [ x ]
 

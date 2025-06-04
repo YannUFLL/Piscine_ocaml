@@ -6,5 +6,6 @@
 a.out
 a.out.byt
 a.out.opt
+.depend
 .vscode
 *.cmo
