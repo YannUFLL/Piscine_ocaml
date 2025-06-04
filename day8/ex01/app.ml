@@ -6,7 +6,7 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/16 12:37:11 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/04 13:18:18 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 13:41:04 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -24,7 +24,7 @@ module App : App = struct
 
   let zero = ("", "", 0)
 
-  let combine (str1, stat1, g1) (str2, stat2, g2) =
+  let combine (str1, _, g1) (str2, _, g2) =
     let new_g = (g1 + g2) / 2 in
     (str1 ^ str2, (if new_g > 80 then "succeed" else "fail"), new_g)
 
