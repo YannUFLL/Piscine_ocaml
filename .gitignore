@@ -4,5 +4,7 @@
 *.o
 *.a
 a.out
+a.out.byt
+a.out.opt
 .vscode
 *.cmo

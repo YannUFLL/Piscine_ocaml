@@ -6,11 +6,11 @@
 (*   By: ydumaine <ydumaine@student.42.fr>          +#+  +:+       +#+        *)
 (*                                                +#+#+#+#+#+   +#+           *)
 (*   Created: 2025/05/16 12:37:11 by ydumaine          #+#    #+#             *)
-(*   Updated: 2025/06/02 10:51:27 by ydumaine         ###   ########.fr       *)
+(*   Updated: 2025/06/04 13:18:18 by ydumaine         ###   ########.fr       *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-module type AppMonoid = sig
+module type App = sig
   type project = string * string * int
 
   val zero : project
@@ -19,15 +19,15 @@ module type AppMonoid = sig
   val success : project -> project
 end
 
-module AppMonoid : AppMonoid = struct
+module App : App = struct
   type project = string * string * int
 
   let zero = ("", "", 0)
 
   let combine (str1, stat1, g1) (str2, stat2, g2) =
     let new_g = (g1 + g2) / 2 in
-    (str1 ^ str2, (if new_g > 80 then "succeed" else "failed"), new_g)
+    (str1 ^ str2, (if new_g > 80 then "succeed" else "fail"), new_g)
 
-  let fail (str1, _, _) = (str1, "failed", 0)
-  let success (str1, _, _) = (str1, "success", 0)
+  let fail (str1, _, _) = (str1, "fail", 0)
+  let success (str1, _, _) = (str1, "succeed", 80)
 end
